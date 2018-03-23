@@ -5,7 +5,7 @@ $tableau = getJsonData();
 
 ?>
 
-<table>
+<table border="1px">
 
 <tr>
     <th>Pseudo</th>
