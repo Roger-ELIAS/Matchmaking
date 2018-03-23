@@ -21,7 +21,9 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <input type="submit" name="Afficher" href="../php/vueTableau.php">
+
+
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>.
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script src="js/vendor/jquery-3.2.1.min.js"></script>
