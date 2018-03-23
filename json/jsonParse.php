@@ -9,7 +9,7 @@ require('Test/TestParse.php');
 
 
 function getJsonData(){
-    $json_source = file_get_contents("../players.json");
+    $json_source = file_get_contents("players.json");
     $json_data = json_decode($json_source, true);
     return $json_data;
 }
