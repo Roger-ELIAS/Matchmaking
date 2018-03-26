@@ -13,15 +13,13 @@
 
 class TestParse {
     public function testGetJsonData(){
-        $json_source = file_get_contents("../players.json");
-        $json_data = json_decode($json_source, true);
-        $this->assertSame(true, isset($json_data)) ;
+        $var = getJsonData();
+        $this->assertSame(true,isset($var) ) ;
 
     }
     public function testCmptPlayer(){
-        $json_source = file_get_contents("../players.json");
-        $json_data = json_decode($json_source, true);
-        $this->assertSame(true, cmptPlayer($json_data)) ;
+        $cmpt=cmptPlayer(getJsonData());
+        $this->assertSame(true, $cmpt) ;
     }
 
 }
