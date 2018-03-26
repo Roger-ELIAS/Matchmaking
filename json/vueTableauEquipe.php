@@ -1,20 +1,32 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="../css/main.css">
 <?php
+/**
+ * Created by PhpStorm.
+ * User: e16009284
+ * Date: 26/03/18
+ * Time: 14:50
+ */
+include "Matchmaking.php";
 
-require("jsonParse.php");
-$tableau = getJsonData();
+Matchmaking($joueurs, $groupe);
+
+
+$tableau = getJsonGroupe();
+foreach ($tableau as $equipe)
+{
 ?>
-
 <table border="1px" class="table">
     <tr class="thead-dark">
         <th>Pseudo</th>
         <th>ID</th>
         <th>Role</th>
         <th>HR</th>
+        <th><?= $equipe["gameId"]?></th>
     </tr>
     <?php
-    foreach($tableau as $ligne) {
+    $liste= $equipe["listeJoueurs"];
+    foreach($liste as $ligne) {
         if ($ligne["role"] == "Tank"){
             $color = "LightBlue";
         }elseif ($ligne["role"] == "Healer"){
@@ -31,7 +43,6 @@ $tableau = getJsonData();
             $colorrank = "Gold";
         }
 
-
         ?>
         <tr>
             <td> <?php echo $ligne["playerID"] ; ?> </td>
@@ -41,3 +52,4 @@ $tableau = getJsonData();
         </tr>
     <?php }?>
 </table>
+<?php }?>

@@ -15,6 +15,12 @@ function getJsonData(){
 }
 
 
+function getJsonGroupe(){
+    $json_source = file_get_contents("groupes.json");
+    $json_data = json_decode($json_source, true);
+    return $json_data;
+}
+
 function cmptPlayer($json_data) {
 
     $cmpt = 0;

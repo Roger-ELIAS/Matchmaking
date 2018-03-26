@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -13,8 +14,6 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -22,14 +21,15 @@
 <![endif]-->
 
 
-<a style="padding-left:40%;"href="affJoueurs.php"><button class="btn btn-outline-secondary">Afficher joueurs</button></a>
+<a href="affJoueurs.php"><button class="btn btn-outline-secondary">Afficher joueurs</button></a>
 <a href="affEquipe.php"><button class="btn btn-outline-secondary">Afficher equipes</button></a>
 
 
 <!-- Add your site or application content here -->
+<?php require "json/vueTableau.php";?>
 
 
-<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="js/vendor/modernizr-3.5.0.min.js"></script>.
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="js/vendor/jquery-3.2.1.min.js"></script>
 <script src="js/plugins.js"></script>
