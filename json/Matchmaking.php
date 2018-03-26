@@ -18,7 +18,6 @@ function placerJoueur($role,$idTableau,$liste) {
         }
         ++$i;
     }
-
 };
 
 function creerUneEquipe($joueurs,$idgame){
@@ -26,25 +25,15 @@ function creerUneEquipe($joueurs,$idgame){
     $equipe = new stdClass();
     $equipe->gameId=$idgame;
 
-    $teamComp=array();
-    //DPS
-    $teamComp[]="DPS";
-    //Tank
-    $teamComp[]="DPS";
-    //Healer
-    $teamComp[]="Healer";
-    $teamComp[]="Tank";
+    $teamComp=array("DPS","DPS","Healer","Tank");
     $equipe->listeJoueurs=array();
     foreach ($joueurs  as $ligne){
         $idTableau[]= $ligne["id"];
     }
     for($i=0;$i<sizeof($teamComp);++$i)
-    $equipe->listeJoueurs[]=placerJoueur($teamComp[$i],$idTableau,$joueurs);
-
-
+        $equipe->listeJoueurs[]=placerJoueur($teamComp[$i],$idTableau,$joueurs);
     return $equipe;
 };
-
 function Matchmaking($joueurs,$groupe){
     $nombreEquipe=cmptPlayer($joueurs)/4;
     for($i=0;$i<$nombreEquipe;++$i){
@@ -55,5 +44,3 @@ function Matchmaking($joueurs,$groupe){
     fwrite($myfile, json_encode($groupe));
     fclose($myfile);
 }
-
-
