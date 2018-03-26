@@ -102,26 +102,8 @@ textarea {
     margin-top: 3%;
     margin-left: auto;
     margin-right: auto;
-    width: 800px;
+    width: 50%;
 }
-
-button{
-    margin-top: 2%;
-}
-
-body {
-   text-align: center;
-}
-
-
-
-
-
-
-
-
-
-
 
 /* ==========================================================================
    Helper classes
