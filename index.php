@@ -22,7 +22,7 @@
 <![endif]-->
 
 
-<a href="affJoueurs.php"><button class="btn btn-outline-secondary">Afficher joueurs</button></a>
+<a style="padding-left:40%;"href="affJoueurs.php"><button class="btn btn-outline-secondary">Afficher joueurs</button></a>
 <a href="affEquipe.php"><button class="btn btn-outline-secondary">Afficher equipes</button></a>
 
 

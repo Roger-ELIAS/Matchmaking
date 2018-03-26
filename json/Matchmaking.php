@@ -26,7 +26,7 @@ function creerUneEquipe($joueurs,$idgame){
     }
 
     for($j=0;$j<4;++$j){
-        $random= rand ( 0 , sizeof($idTableau)-1 );
+        $random= rand ( 1 , sizeof($idTableau));
         $equipe->listeJoueurs[]=placerJoueur($random,$idTableau,$joueurs);
     }
 

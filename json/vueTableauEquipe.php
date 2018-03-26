@@ -7,5 +7,49 @@
  * Date: 26/03/18
  * Time: 14:50
  */
+include "Matchmaking.php";
 
-echo "Mon equipe";
+Matchmaking($joueurs, $groupe);
+
+
+$tableau = getJsonGroupe();
+foreach ($tableau as $equipe)
+{
+?>
+<table border="1px" class="table">
+    <tr class="thead-dark">
+        <th>Pseudo</th>
+        <th>ID</th>
+        <th>Role</th>
+        <th>HR</th>
+        <th><?= $equipe["gameId"]?></th>
+    </tr>
+    <?php
+    $liste= $equipe["listeJoueurs"];
+    foreach($liste as $ligne) {
+        if ($ligne["role"] == "Tank"){
+            $color = "LightBlue";
+        }elseif ($ligne["role"] == "Healer"){
+            $color = "LightGreen";
+        }else{
+            $color = "LightCoral";
+        }
+
+        if ($ligne["HR"] < 50){
+            $colorrank = "white";
+        }elseif ($ligne["HR"] < 75){
+            $colorrank = "Silver";
+        }else{
+            $colorrank = "Gold";
+        }
+
+        ?>
+        <tr>
+            <td> <?php echo $ligne["playerID"] ; ?> </td>
+            <td> <?php echo $ligne["id"] ; ?> </td>
+            <td style="background-color:<?= $color?>;color:black;"> <?php echo $ligne["role"] ; ?> </td>
+            <td style="background-color:<?= $colorrank?>;color:black;"> <?php echo $ligne["HR"] ; ?> </td>
+        </tr>
+    <?php }?>
+</table>
+<?php }?>
