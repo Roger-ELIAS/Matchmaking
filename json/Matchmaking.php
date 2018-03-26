@@ -6,13 +6,15 @@ $joueurs = getJsonData();
 $groupe = array();
 
 
-function placerJoueur($role,$idTableau,$liste) {
+function placerJoueur($role,&$idTableau,$liste) {
     $i=0;
-    while($i < sizeof($idTableau)) {
-        $random= rand ( 1 , sizeof($idTableau));
+    while($i < sizeof($idTableau)+4) {
+        $random= rand ( 0 , sizeof($idTableau));
+        $tempID = $idTableau[$random];
         foreach ($liste as $ligne) {
-            if ($ligne["id"] == $random && $ligne["role"]==$role) {
+            if ($ligne["id"] == $tempID && $ligne["role"]==$role) {
                 unset($idTableau[$random]);
+                $idTableau=array_values($idTableau);
                 return $ligne;
             }
         }
@@ -20,24 +22,23 @@ function placerJoueur($role,$idTableau,$liste) {
     }
 };
 
-function creerUneEquipe($joueurs,$idgame){
-    $idTableau=array();
+function creerUneEquipe($joueurs,$idgame,&$idTableau){
     $equipe = new stdClass();
     $equipe->gameId=$idgame;
-
     $teamComp=array("DPS","DPS","Healer","Tank");
     $equipe->listeJoueurs=array();
-    foreach ($joueurs  as $ligne){
-        $idTableau[]= $ligne["id"];
-    }
     for($i=0;$i<sizeof($teamComp);++$i)
         $equipe->listeJoueurs[]=placerJoueur($teamComp[$i],$idTableau,$joueurs);
     return $equipe;
 };
 function Matchmaking($joueurs,$groupe){
+    $idTableau=array();
+    foreach ($joueurs  as $ligne){
+        $idTableau[]= $ligne["id"];
+    }
     $nombreEquipe=cmptPlayer($joueurs)/4;
     for($i=0;$i<$nombreEquipe;++$i){
-        $groupe[] = creerUneEquipe($joueurs,$i);
+        $groupe[] = creerUneEquipe($joueurs,$i,$idTableau);
     }
     file_put_contents("groupes.json", "");
     $myfile = fopen("groupes.json", "w") or die("Unable to open file!");
