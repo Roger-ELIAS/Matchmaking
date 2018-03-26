@@ -98,10 +98,20 @@ textarea {
    ========================================================================== */
 
 
+.table{
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
 
+button{
+    margin-top: 2%;
+}
 
-
-
+body {
+   text-align: center;
+}
 
 
 
