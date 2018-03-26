@@ -20,7 +20,8 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <?php require "json/vueTableau.php"; ?>
+        <?php require "json/Matchmaking.php";
+        Matchmaking($joueurs,$groupe)?>
 
 
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>.

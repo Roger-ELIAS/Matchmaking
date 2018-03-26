@@ -24,14 +24,6 @@ function cmptPlayer($json_data) {
             $cmpt += 1;
         }
     }
-    if($cmpt < 100){
-        return false;
-    }
-    else if($cmpt >100){
-        return false;
-    }
-    else if($cmpt == 100){
-        return true;
-    }
+    return $cmpt;
 };
 
