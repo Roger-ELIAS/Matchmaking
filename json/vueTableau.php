@@ -1,9 +1,11 @@
 <?php
-require ("../json/jsonParse.php");
+require("jsonParse.php");
 
 $tableau = getJsonData();
 
 ?>
+
+<table border="1px">
 
 <tr>
     <th>Pseudo</th>
@@ -17,3 +19,5 @@ foreach($tableau as $ligne) {?>
             <td> <?php echo $ligne["id"] ; ?> </td>
         </tr>
 <?php }?>
+
+</table>

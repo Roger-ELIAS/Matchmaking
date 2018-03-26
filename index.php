@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -21,7 +20,7 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <input type="submit" name="Afficher" href="../php/vueTableau.php">
+        <?php require "json/vueTableau.php"; ?>
 
 
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>.
